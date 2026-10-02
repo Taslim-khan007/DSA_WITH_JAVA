@@ -4,24 +4,24 @@ package Arrays;
 
 public class Array {
 
-    public static void linearSearch(int numbers[], int key) {
+    public static void getLargest(int numbers[]) {
+
+        int largest = Integer.MIN_VALUE;
 
         for (int i = 0; i < numbers.length; i++) {
 
-            if (numbers[i] == key) {
-                System.out.println("Key found at index: " + i);
-                return;
+            if (largest < numbers[i]) {
+                largest = numbers[i];
             }
         }
 
-        System.out.println("Key not found");
+        System.out.println("Largest element: " + largest);
     }
 
     public static void main(String args[]) {
 
         int numbers[] = { 2, 4, 6, 8, 10, 12, 14, 16 };
-        int key = 10;
 
-        linearSearch(numbers, key);
+        getLargest(numbers);
     }
 }
